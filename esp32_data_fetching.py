@@ -51,15 +51,12 @@ while True:
     if data == "[]": 
         break
 
-    data1 = json.loads(data)
+    data = json.loads(data)
 
-    pwm0.duty(map_range(data1[0].get("output1") ))
-    pwm1.duty(map_range(data1[0].get("output2") ))
-    pwm2.duty(map_range(data1[0].get("output3") ))
+    pwm0.duty(map_range(data[0].get("output1")))
+    pwm1.duty(map_range(data[0].get("output2")))
+    pwm2.duty(map_range(data[0].get("output3")))
 
-    print(map_range(data1[0].get("output1")))
-     
     time.sleep(1)
-    print(data1[0])
 
 print("Error")
